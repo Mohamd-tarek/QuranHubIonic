@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  title = 'QuranHub';
+
+  links :any[] = [{name :"read", url : "/read"},
+                  {name :"tafseer", url : "/tafseer"},
+                  {name :"mindMaps", url : "/mindMaps"},
+                  {name :"search", url : "/search"},
+                  {name :"notes", url : "/notes"},
+                  {name :"statistics", url : "/statistics"},
+                  {name :"analysis", url : "/analysis"},
+                  {name :"documentary", url : "/documentary"},
+                ];
 }

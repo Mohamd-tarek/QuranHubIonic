@@ -1,0 +1,16 @@
+<div class="d-inline-block "  [style.width.px]="diamter">
+    <div *ngIf="!picture.length"  class="row  align-items-center justify-content-center border border-2  bg-info  text-white rounded-circle "
+    [style.width.px]="diamter"
+    [style.height.px]="diamter">
+     <div class="col text-center">
+         <i [style.scale]="1.8" 
+            class="fa-solid fa-user "></i>
+     </div>
+    </div>
+    <img *ngIf="picture.length"
+         class="rounded-circle border border-2"
+         alt="Profile Picture"
+         [style.width.px]="diamter"
+         [style.height.px]="diamter"
+         [src]="'data:image/png;base64,' + picture" />
+</div>

@@ -1,19 +1,36 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
+import { NgModule } from "@angular/core";
 import { FormsModule } from '@angular/forms';
-import { HomePage } from './home.page';
+import { ReactiveFormsModule } from "@angular/forms";
+import { RouterModule, Routes } from "@angular/router";
+import { CommonModule } from '@angular/common';
+import { HomeComponent } from "./home.component";
+import { AddPostComponent } from "./addPostComponent/addPost.component";
+import { TemplateModule } from "../templateComponents/template.module";
+import { PostViewerComponent } from "./PostViewerComponent/PostViewer.component";
+import { AuthenticationGuard } from "../services/authentication.guard";
 
-import { HomePageRoutingModule } from './home-routing.module';
+const routes: Routes = [
+  { path: "", component: HomeComponent, canActivate: [AuthenticationGuard] },
+  { path: "postViewer/:notificationId", component: PostViewerComponent, canActivate: [AuthenticationGuard] }]
 
 
-@NgModule({
+@NgModule({   
   imports: [
-    CommonModule,
+    RouterModule.forChild(routes),
     FormsModule,
-    IonicModule,
-    HomePageRoutingModule
+    CommonModule,
+    ReactiveFormsModule,
+    TemplateModule,
   ],
-  declarations: [HomePage]
+  declarations: [
+    HomeComponent,
+    AddPostComponent,
+    PostViewerComponent,
+  ],
+
+  providers: [],
+
+  exports: []
 })
-export class HomePageModule {}
+
+export class HomeModule {}

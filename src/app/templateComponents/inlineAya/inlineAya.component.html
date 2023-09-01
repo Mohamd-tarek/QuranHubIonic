@@ -1,0 +1,12 @@
+<span  class="text-end"
+       *ngIf="!focused"
+       [id]="'aya' + aya.aya" >
+       {{aya.text}}
+    <span  class="text-primary "  > ({{aya.aya}}) </span>
+</span>
+<span  class="text-end"
+       *ngIf="focused"
+       [id]="'aya' + aya.aya"
+       [@backgroundHighlight] >{{aya.text}}
+    <span  class="text-primary "  > ({{aya.aya}}) </span>
+</span>

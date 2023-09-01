@@ -1,0 +1,6 @@
+<img *ngIf="picture !== null"
+     alt="no picture"
+     [style.width.px]="width"
+     [style.height.px]="height"
+     [src]="'data:image/png;base64,' + picture"  />
+
