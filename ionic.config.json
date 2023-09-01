@@ -1,0 +1,7 @@
+{
+  "name": "QuranHubIonic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
